@@ -9,6 +9,7 @@ const routes: Hapi.ServerRoute[] = [
       validate: {
         params: NameRequestSchema,
       },
+      tags: ["api"],
     },
     handler: async (req: Hapi.Request): Promise<string> => {
       return `Hello ${req.params.name}!`;
