@@ -1,24 +1,13 @@
 import Hapi from "@hapi/hapi";
-import { NameRequestSchema } from "./schemas/NameRequestSchema";
+import ApiNameRoutes from "./api/name";
 
-const init = async () => {
-  const server = Hapi.server({
-    port: 3000,
-    host: "localhost",
-  });
+export const server = Hapi.server({
+  port: 3000,
+  host: "localhost",
+});
 
-  server.route({
-    method: "GET",
-    path: "/{name}",
-    options: {
-      validate: {
-        params: NameRequestSchema,
-      },
-    },
-    handler: (req) => {
-      return `Hello ${req.params.name}!`;
-    },
-  });
+const init = async (): Promise<void> => {
+  server.route(ApiNameRoutes);
 
   await server.start();
   console.log(`Server running on ${server.info.uri}`);
