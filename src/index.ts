@@ -1,5 +1,5 @@
 import Hapi from "@hapi/hapi";
-import { NameRequest } from "./schemas/NameSchema";
+import { NameRequestSchema } from "./schemas/NameRequestSchema";
 
 const init = async () => {
   const server = Hapi.server({
@@ -12,7 +12,7 @@ const init = async () => {
     path: "/{name}",
     options: {
       validate: {
-        params: NameRequest,
+        params: NameRequestSchema,
       },
     },
     handler: (req) => {
