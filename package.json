@@ -7,25 +7,28 @@
     "dev": "nodemon --watch ./src --ext ts --exec ts-node --transpile-only src/index.ts",
     "tsc:w": "tsc --watch --noEmit",
     "jtt": "ts-node jtt.ts",
-    "test:w": "jest --watch"
+    "test:w": "jest --watch",
+    "build": "tsc --incremental",
+    "esbuild": "esbuild src/index.ts --bundle --platform=node --target=node14.17.5 --outdir=esbuild"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@hapi/hapi": "^20.1.5",
     "@hapi/inert": "^6.0.3",
-    "@types/hapi__inert": "^5.2.3",
     "hapi-swagger": "^14.2.4",
     "joi": "^17.4.2"
   },
   "devDependencies": {
     "@types/hapi__hapi": "^20.0.9",
+    "@types/hapi__inert": "^5.2.3",
     "@types/jest": "^27.0.1",
     "@types/joi": "^17.2.3",
     "@types/node": "^16.6.1",
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
+    "esbuild": "^0.12.20",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
