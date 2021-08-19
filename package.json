@@ -9,7 +9,7 @@
     "jtt": "ts-node jtt.ts",
     "test:w": "jest --watch",
     "build": "rm -rf dist && tsc",
-    "esbuild": "esbuild src/index.ts --bundle --sourcemap --platform=node --target=node14.17.5 --outdir=esbuild",
+    "esbuild": "rm -rf esbuild && esbuild src/index.ts --bundle --sourcemap --platform=node --target=node14.17.5 --outdir=esbuild",
     "esbuild2": "rm -rf esbuild && ts-node --transpile-only esbuild.ts"
   },
   "author": "",
