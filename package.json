@@ -10,7 +10,7 @@
     "test:w": "jest --watch",
     "build": "rm -rf dist && tsc",
     "esbuild": "esbuild src/index.ts --bundle --sourcemap --platform=node --target=node14.17.5 --outdir=esbuild",
-    "esbuild2": "rm -rf dist && ts-node --transpile-only esbuild.ts"
+    "esbuild2": "rm -rf esbuild && ts-node --transpile-only esbuild.ts"
   },
   "author": "",
   "license": "ISC",
