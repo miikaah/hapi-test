@@ -8,8 +8,9 @@
     "tsc:w": "tsc --watch --noEmit",
     "jtt": "ts-node jtt.ts",
     "test:w": "jest --watch",
-    "build": "tsc --incremental",
-    "esbuild": "esbuild src/index.ts --bundle --platform=node --target=node14.17.5 --outdir=esbuild"
+    "build": "rm -rf dist && tsc",
+    "esbuild": "esbuild src/index.ts --bundle --sourcemap --platform=node --target=node14.17.5 --outdir=esbuild",
+    "esbuild2": "rm -rf dist && ts-node --transpile-only esbuild.ts"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "joi": "^17.4.2"
   },
   "devDependencies": {
+    "@esbuild-plugins/node-resolve": "^0.1.4",
     "@types/hapi__hapi": "^20.0.9",
     "@types/hapi__inert": "^5.2.3",
     "@types/jest": "^27.0.1",
