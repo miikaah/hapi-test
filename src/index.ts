@@ -14,10 +14,21 @@ const init = async (): Promise<void> => {
   // Only serve /swagger.json so that Redoc can be used for docs UI
   const swaggerOptions: HapiSwagger.RegisterOptions = {
     info: {
-      title: "Test API Documentation",
+      title: "HAPI API Documentation",
+      version: "1.0.0",
+      description:
+        "Short description `asd` qweqwe \n\n" +
+        "more lines\n\n" +
+        "more lines\n\n" +
+        "more lines\n\n" +
+        "more lines\n\n",
     },
     documentationPage: false,
     swaggerUI: false,
+    tags: [{ name: "Name", description: "Name routes description" }],
+    grouping: "tags",
+    consumes: ["application/json"],
+    produces: ["application/json"],
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

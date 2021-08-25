@@ -3,6 +3,15 @@
  * Do not modify this file manually
  */
 
-export interface NameRequest {
+export interface NameRequestBody {
+  metadata?: object;
   name: string;
+}
+
+export interface NameRequestParams {
+  name: string;
+}
+
+export interface NameRequestQuery {
+  otherName?: string;
 }
